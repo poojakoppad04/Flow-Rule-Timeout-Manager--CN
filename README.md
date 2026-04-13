@@ -96,21 +96,19 @@ h1 ping h2
 
 ---
 
+
+
+
 ## Screenshots
 
 ### Flow Table
-
-![Flow Table](screenshots/Flow_Table.jpeg)
+![Flow Table](Flow_Table.jpeg)
 
 ### Mininet Topology
-
-![Mininet](screenshots/Mininet.jpeg)
+![Mininet](Mininet.jpeg)
 
 ### Ryu Controller Output
-
-![Ryu Controller](screenshots/RYU_Controller.jpeg)
-
----
+![Ryu Controller](RYU_Controller.jpeg)
 
 ## Learning Outcomes
 
