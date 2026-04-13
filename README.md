@@ -110,5 +110,4 @@ h1 ping h2
 ---
 
 ## Author
-
-Individual Computer Networks Project
+Pooja Koppad
