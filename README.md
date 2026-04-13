@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements a Flow Rule Timeout Manager using Software Defined Networking (SDN). It demonstrates how flow rules are dynamically installed in a switch, monitored, and automatically removed after an idle timeout using a controller (Ryu framework).
+This project implements a **Flow Rule Timeout Manager** using Software Defined Networking (SDN). It demonstrates how flow rules are dynamically installed in a switch, monitored, and automatically removed after an idle timeout using the **Ryu Controller**.
 
 ---
 
@@ -19,12 +19,11 @@ To implement and analyze timeout-based flow rule management in an SDN environmen
 
 ## Features
 
-* Installation of flow rules using SDN controller
-* Idle timeout configuration for each flow entry
+* Dynamic installation of flow rules using SDN controller
+* Idle timeout configuration for flow entries
 * Automatic deletion of inactive/expired rules
-* Real-time observation of rule lifecycle
+* Real-time monitoring of flow rule lifecycle
 * Traffic-based rule creation and removal
-* Regression testing of timeout behavior
 
 ---
 
@@ -33,8 +32,8 @@ To implement and analyze timeout-based flow rule management in an SDN environmen
 * Python
 * Ryu SDN Framework
 * OpenFlow Protocol
-* Mininet (for network simulation)
-* Linux environment
+* Mininet (network simulation)
+* Linux Environment
 
 ---
 
@@ -44,21 +43,23 @@ To implement and analyze timeout-based flow rule management in an SDN environmen
 Flow-Rule-Timeout-Manager/
 │
 ├── controller.py          # Main SDN controller (flow timeout logic)
-├── test_script.sh         # Script to generate traffic (optional)
 ├── README.md              # Project documentation
-└── screenshots/           # Output images (flow tables, topology)
+└── screenshots/           # Output images
+    ├── Flow_Table.jpeg
+    ├── Mininet.jpeg
+    └── RYU_Controller.jpeg
 ```
 
 ---
 
 ## Working Principle
 
-1. Switch sends packet-in request to controller
-2. Controller installs flow rules with idle timeout
-3. If no packets match the rule for a period → rule expires
-4. Expired rules are automatically removed from switch
-5. New traffic triggers new rule installation
-6. Entire lifecycle is monitored and analyzed
+1. Switch sends a **packet-in request** to the controller
+2. Controller installs flow rules with an **idle timeout**
+3. If no packets match the rule → it **expires automatically**
+4. Expired rules are removed from the switch
+5. New traffic triggers **new rule installation**
+6. Entire lifecycle is monitored
 
 ---
 
@@ -66,25 +67,21 @@ Flow-Rule-Timeout-Manager/
 
 ### 1. Start Ryu Controller
 
-```bash
+```
 ryu-manager controller.py
 ```
 
----
-
 ### 2. Start Mininet Topology
 
-```bash
+```
 sudo mn --topo single,2 --controller remote
 ```
-
----
 
 ### 3. Generate Traffic
 
 Inside Mininet CLI:
 
-```bash
+```
 h1 ping h2
 ```
 
@@ -93,9 +90,25 @@ h1 ping h2
 ## Expected Output
 
 * Flow rules installed in switch table
-* Idle timeout countdown starts
+* Idle timeout countdown begins
 * Rules automatically removed after inactivity
-* New rules created on new traffic
+* New rules created when traffic resumes
+
+---
+
+## Screenshots
+
+### Flow Table
+
+![Flow Table](screenshots/Flow_Table.jpeg)
+
+### Mininet Topology
+
+![Mininet](screenshots/Mininet.jpeg)
+
+### Ryu Controller Output
+
+![Ryu Controller](screenshots/RYU_Controller.jpeg)
 
 ---
 
@@ -103,11 +116,14 @@ h1 ping h2
 
 * Understanding SDN architecture
 * Flow rule management in OpenFlow
-* Timeout-based rule lifecycle handling
+* Timeout-based lifecycle handling
 * Controller-switch communication
 * Practical implementation of network automation
 
 ---
 
 ## Author
-Pooja Koppad
+
+**Pooja Koppad**
+
+---
