@@ -42,12 +42,11 @@ To implement and analyze timeout-based flow rule management in an SDN environmen
 ```
 Flow-Rule-Timeout-Manager/
 │
-├── controller.py          # Main SDN controller (flow timeout logic)
-├── README.md              # Project documentation
-└── screenshots/           # Output images
-    ├── Flow_Table.jpeg
-    ├── Mininet.jpeg
-    └── RYU_Controller.jpeg
+├── flow_timeout_manager.py   # Main SDN controller (flow timeout logic)
+├── README.md                 # Project documentation
+├── Flow_Table.jpeg
+├── Mininet.jpeg
+└── RYU_Controller.jpeg
 ```
 
 ---
@@ -68,7 +67,7 @@ Flow-Rule-Timeout-Manager/
 ### 1. Start Ryu Controller
 
 ```
-ryu-manager controller.py
+ryu-manager flow_timeout_manager.py
 ```
 
 ### 2. Start Mininet Topology
@@ -96,19 +95,21 @@ h1 ping h2
 
 ---
 
-
-
-
 ## Screenshots
 
 ### Flow Table
+
 ![Flow Table](Flow_Table.jpeg)
 
 ### Mininet Topology
+
 ![Mininet](Mininet.jpeg)
 
 ### Ryu Controller Output
+
 ![Ryu Controller](RYU_Controller.jpeg)
+
+---
 
 ## Learning Outcomes
 
@@ -123,5 +124,3 @@ h1 ping h2
 ## Author
 
 **Pooja Koppad**
-
----
